@@ -12,7 +12,6 @@ export default function Home() {
     setUser(foundUser);
     window.location = `/profile/${foundUser.login}`;
   };
-  console.log(user);
   return (
     <div className=" text-center">
       <div className={Styles.searchbarHolder}>
