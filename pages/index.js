@@ -1,27 +1,27 @@
-import Head from "next/head";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Styles from "../styles/search.module.scss";
 export default function Home() {
-  const [username,setUsername]=useState("")
-  const [user,setUser]=useState()
+  const [username, setUsername] = useState("");
+  const [user, setUser] = useState();
   const InputHandler = (e) => {
-   setUsername(e.target.value)
+    setUsername(e.target.value);
   };
-  const startSearch = async ()=>{
-const res = await fetch(`https://api.github.com/users/${username}`)
-const foundUserser= await  res.json()
-setUser(foundUserser)
-  }
+  const startSearch = async () => {
+    const res = await fetch(`https://api.github.com/users/${username}`);
+    const foundUser = await res.json();
+    setUser(foundUser);
+    window.location = `/profile/${foundUser.login}`;
+  };
+  console.log(user);
   return (
-    <div>
-      <label>Search Github Username :</label> <input onChange={InputHandler} />
-      
-      <button onClick={startSearch} >Go</button>
-{
-  user && <>
-  <h3>{user.login}</h3>
-  </>
-}
+    <div className=" text-center">
+      <div className={Styles.searchbarHolder}>
+        <label>Search Github Username :</label>{" "}
+        <input className="mx-2" onChange={InputHandler} />
+        <button onClick={startSearch} className="btn btn-success">
+          Search
+        </button>
+      </div>
     </div>
   );
 }
