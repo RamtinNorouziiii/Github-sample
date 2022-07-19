@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
+import { Pagination } from "../../components/pagination";
 
 const UserDetail = ({ repos, user }) => {
   console.log(
@@ -166,6 +167,9 @@ const UserDetail = ({ repos, user }) => {
                       </div>
                     );
                   })}
+                  <div>
+                    <Pagination data={repos} dataLimit={6} />
+                  </div>
             </div>
           </div>
         </div>
