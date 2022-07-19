@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+//ja be ja kardan paginate va avordan func ha be inja va tabdil data be comp kochack
 import Image from "next/image";
 import { Pagination } from "../../components/pagination";
 
