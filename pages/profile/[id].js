@@ -35,39 +35,41 @@ console.log("@@@@",currentPage)
     <>
       <UserProfile user={user} repos={getPaginatedData()} />
      <div className="text-center" >
-     <nav aria-label="Page navigation example " className="paginateNav">
+   {
+    repos.length>0 &&  <nav aria-label="Page navigation example " className="paginateNav">
         
-        <ul className="pagination">
-          <li
-            className={`page-item ${currentPage === 1 ? "disabled" : ""}`}
-            onClick={goToPreviousPage}
-          >
-            <button className="page-link " >
-              Previous
-            </button>
-          </li>
-          {pages > 0 &&
-            [...Array(pages).keys()].map((item, index) => {
-              return (
-                <li
-                  key={index}
-                  className={`page-item ${
-                    currentPage === item+1  ? "active" : null
-                  }`}
-                  onClick={changePage}
-                >
-                  <a className="page-link">{item+1 }</a>
-                </li>
-              );
-            })}
-  
-          <li className={`page-item ${currentPage === pages ? "disabled" : ""}`}>
-            <button className="page-link" onClick={goToNextPage}>
-              Next
-            </button>
-          </li>
-        </ul>
-      </nav>
+    <ul className="pagination">
+      <li
+        className={`page-item ${currentPage === 1 ? "disabled" : ""}`}
+        onClick={goToPreviousPage}
+      >
+        <button className="page-link " >
+          Previous
+        </button>
+      </li>
+      {pages > 0 &&
+        [...Array(pages).keys()].map((item, index) => {
+          return (
+            <li
+              key={index}
+              className={`page-item ${
+                currentPage === item+1  ? "active" : null
+              }`}
+              onClick={changePage}
+            >
+              <a className="page-link">{item+1 }</a>
+            </li>
+          );
+        })}
+
+      <li className={`page-item ${currentPage === pages ? "disabled" : ""}`}>
+        <button className="page-link" onClick={goToNextPage}>
+          Next
+        </button>
+      </li>
+    </ul>
+  </nav>
+   }
      </div>
     </>
   );
