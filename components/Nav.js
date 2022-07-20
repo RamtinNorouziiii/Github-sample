@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Styles from "../styles/test.module.scss"
 const Nav = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -11,7 +10,7 @@ const Nav = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link href="/" ><a className={Styles.links}>Home</a></Link>
+            <Link href="/" ><a >Home</a></Link>
           </li>
          
         </ul>
