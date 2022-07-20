@@ -2,7 +2,6 @@
 /* eslint-disable @next/next/no-img-element */
 
 export const UserProfile = ({ user, repos }) => {
-  console.log("REPOS", repos);
   return (
     <div className="container-fluid ">
       <div className="row ">

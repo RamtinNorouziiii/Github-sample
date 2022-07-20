@@ -23,14 +23,8 @@ const UserDetail = ({ repos, user }) => {
     const endIndex = startIndex + pageLimit;
     return repos.slice(startIndex, endIndex);
   };
-console.log("@@@@",currentPage)
  
 
-  console.log(
-    repos &&
-      repos.sort((a, b) => (b.updated_at > a.updated_at ? 1 : -1))
-  );
-  console.log(user);
   return (
     <>
       <UserProfile user={user} repos={getPaginatedData()} />

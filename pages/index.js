@@ -1,6 +1,8 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 import Styles from "../styles/search.module.scss";
 export default function Home() {
+  const router = useRouter()
   const [username, setUsername] = useState("");
   const[notFound,setNotFound]=useState(false)
   const InputHandler = (e) => {
@@ -13,7 +15,7 @@ export default function Home() {
     }).catch((err)=>{return err})
      const foundUser = await res.json()
      res.status===404 ?setNotFound(true):setNotFound(false)
-    res.status===404 ? "" :window.location = `/profile/${foundUser.login}`
+    res.status===404 ? "" :router.push(`/profile/${foundUser.login}`, undefined, { shallow: true })
     setUsername("")
   };
   return (
