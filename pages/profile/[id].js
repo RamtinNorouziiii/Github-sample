@@ -4,6 +4,7 @@ import { useState } from "react";
 import { UserProfile } from "../../components/userprofile";
 
 const UserDetail = ({ repos, user }) => {
+                          // pagination Setting
   const pageLimit =6
   const [pages] = useState(Math.ceil(repos.length / pageLimit));
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,7 +24,8 @@ const UserDetail = ({ repos, user }) => {
     const endIndex = startIndex + pageLimit;
     return repos.slice(startIndex, endIndex);
   };
- 
+                        // pagination Setting
+
 
   return (
     <>

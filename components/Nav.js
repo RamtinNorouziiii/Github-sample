@@ -13,7 +13,7 @@ const Nav = () => {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <a className="navbar-brand">Github Template</a>
+        <a className="navbar-brand">Quera-Task</a>
         <button
           className="navbar-toggler"
           type="button"
@@ -32,6 +32,7 @@ const Nav = () => {
                 <a>Home</a>
               </Link>
             </li>
+                                    {/* Dark Theme */}
             <li className="nav-item mx-5">
               <div className="form-check form-switch" onChange={ThemeToggle}>
                 <input
@@ -48,6 +49,7 @@ const Nav = () => {
                 </label>
               </div>
             </li>
+                                      {/* Dark Theme */}
           </ul>
         </div>
       </div>
